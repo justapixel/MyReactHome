@@ -1,0 +1,21 @@
+{
+  "name": "MyReactHome",
+  "version": "1.0.0",
+  "description": "Backend of MyReactHome",
+  "main": "index.js",
+  "repository": "https://github.com/lif3code/MyReactHome.git",
+  "author": "Rhuan Oliveira",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "serialport": "^7.1.5",
+    "socket.io": "^2.3.0",
+    "sqlite3": "^4.1.0"
+  }
+}
