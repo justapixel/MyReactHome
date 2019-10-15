@@ -8,6 +8,7 @@ const routes = express.Router();
 
 routes.post('/room', RoomsController.store);
 routes.post('/sensor', SensorsController.store);
+routes.get('/sensor', SensorsController.index);
 routes.get('/state', StateController.show);
 
 module.exports = routes;
