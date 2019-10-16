@@ -10,4 +10,20 @@ module.exports = {
     const index = await Sensors.findAll();
     res.json(index);
   },
+
+  async update(req, res) {
+    const update = await Sensors.update(
+      {state: req.body.state},
+      {where: {id: req.body.id}}
+    )
+    res.json(update);
+  },
+
+  async indexone(req, res) {
+    const { id } = req.query;
+
+    const indexone = await Sensors.findByPk(id);
+
+    return res.json(indexone);
+  }
 };
