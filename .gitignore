@@ -62,3 +62,5 @@ typings/
 
 #Misc
 .history
+*.sqlite3
+yarn.lock
