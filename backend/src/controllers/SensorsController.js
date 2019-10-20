@@ -13,10 +13,18 @@ module.exports = {
 
   async update(req, res) {
     const update = await Sensors.update(
-      {state: req.body.state},
-      {where: {id: req.body.id}}
+      {
+        state: req.body.state,
+        value: req.body.value
+      },
+      {
+        where: {id: req.body.id}
+      }
     )
     res.json(update);
+    const connection  = require('./UpdateAll').connection();
+    const sensorsData = await Sensors.findAll();
+    connection.sendEvent("sensorUpdate", sensorsData);
   },
 
   async indexone(req, res) {
