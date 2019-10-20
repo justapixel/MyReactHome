@@ -17,7 +17,7 @@ function ReactHome() {
 
     loadSensors();
 
-    const socket = socketio('http://192.168.1.10:3000')
+    const socket = socketio('http://192.168.25.104:3000')
     socket.on('sensorUpdate', socketdata => {
       setSensors(socketdata);
     })
@@ -50,7 +50,7 @@ function ReactHome() {
             <View style={styles.listItem}>
               <Text style={styles.location}>{item.location}</Text>
               <Text style={styles.location}>Temp {item.value}ºC</Text>
-              <View style={styles.state}>
+              <View style={item.state == 'off' ? styles.stateoff : styles.stateon}>
                 <Text style={styles.statetext}>{item.state == 'off' ? 'Desligado' : 'Ligado'}</Text>
               </View>
             </View>
@@ -102,9 +102,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 
-  state: {
+  stateoff: {
     height: 32,
     backgroundColor: '#ff3618',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+    marginTop: 15,
+  },
+
+  stateon: {
+    height: 32,
+    backgroundColor: '#77b900',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 2,
