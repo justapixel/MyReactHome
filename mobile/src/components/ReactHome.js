@@ -17,7 +17,7 @@ function ReactHome() {
 
     loadSensors();
 
-    const socket = socketio('http://192.168.25.104:3000')
+    const socket = socketio('http://10.42.0.1:3000')
     socket.on('sensorUpdate', socketdata => {
       setSensors(socketdata);
     })
@@ -51,7 +51,7 @@ function ReactHome() {
               <Text style={styles.location}>{item.location}</Text>
               <Text style={styles.location}>Temp {item.value}ºC</Text>
               <View style={item.state == 'off' ? styles.stateoff : styles.stateon}>
-                <Text style={styles.statetext}>{item.state == 'off' ? 'Desligado' : 'Ligado'}</Text>
+                <Text style={styles.statetext}>{item.state == 'off' ? 'SWITCH OFF' : 'SWITCH ON'}</Text>
               </View>
             </View>
           </TouchableOpacity>

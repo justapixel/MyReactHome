@@ -64,3 +64,6 @@ typings/
 .history
 *.sqlite3
 yarn.lock
+.vscode
+.expo
+*.svg
