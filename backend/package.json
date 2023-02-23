@@ -16,7 +16,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "sequelize": "^5.19.3",
+    "sequelize": "^6.28.2",
     "serialport": "^7.1.5",
     "socket.io": "^2.4.0",
     "sqlite3": "^4.1.0"
